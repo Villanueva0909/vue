@@ -48,10 +48,17 @@ function addTask() {
   margin-bottom: 1rem;
 }
 
-.input {
+input {
   flex-grow: 1;
   padding: 0.5rem;
   border-radius: 6px;
-  border: 1px solid;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
 }
 </style>
