@@ -40,20 +40,18 @@ function addTask() {
   margin: 2rem auto;
   font-family: sans-serif;
   text-align: center;
+}
 
-  .input-row {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
+.input-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
 
-  .input {
-    flex-grow: 1;
-    padding: 0.5rem;
-    border-radius: 6px;
-    border: 1px solid;
-  }
-
-
+.input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid;
 }
 </style>
