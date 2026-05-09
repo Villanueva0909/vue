@@ -6,6 +6,14 @@
       <input type="text" placeholder="Add task here" v-model="newTask" />
       <button @click="addTask">Add task</button>
     </div>
+
+    <ul class="task-list">
+      <li v-for="task in tasks" :key="task.id">
+        <input type="checkbox" />
+        <span>{{ task.text }}</span>
+      </li>
+
+    </ul>
   </div>
 </template>
 
@@ -13,7 +21,7 @@
 import { ref } from 'vue'
 
 const newTask = ref("")
-const tasks = ref([''])
+const tasks = ref([])
 
 function addTask() {
   const text = newTask.value.trim()
@@ -22,14 +30,12 @@ function addTask() {
   }
   tasks.value.push({
     id: Date.now(),
-    text: 'text',
+    text: text,
     completed: false,
     favorite: false,
   })
 
   newTask.value = '';
-
-  console.log(tasks)
 }
 
 </script>
