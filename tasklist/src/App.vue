@@ -67,4 +67,17 @@ button {
   border: 1px solid #ccc;
   cursor: pointer;
 }
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
 </style>
