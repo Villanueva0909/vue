@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
     <h1>Task manager</h1>
+    <input type="checkbox"/>
 
     <div class="input-row">
       <input type="text" placeholder="Add task here" v-model="newTask" />
@@ -8,8 +9,8 @@
     </div>
 
     <ul class="task-list">
-      <li v-for="task in tasks" :key="task.id">
-        <input type="checkbox" />
+      <li v-for="task in tasks" :key="task.id" :class="{ done: task.completed }">
+        <input type="checkbox" v-model="task.completed" />
         <span>{{ task.text }}</span>
       </li>
 
@@ -80,4 +81,11 @@ button {
   padding: 0.5rem;
   border-bottom: 1px solid #eee;
 }
+
+.task-list li.done span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+
 </style>
