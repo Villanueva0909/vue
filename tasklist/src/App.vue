@@ -1,8 +1,7 @@
 <template>
   <div class="wrapper">
     <h1>Task manager</h1>
-    <input type="checkbox"/>
-
+    
     <div class="input-row">
       <input type="text" placeholder="Add task here" v-model="newTask" />
       <button @click="addTask">Add task</button>
