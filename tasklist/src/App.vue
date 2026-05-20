@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <h1>Task manager</h1>
-    
+
     <div class="input-row">
       <input type="text" placeholder="Add task here" v-model="newTask" />
       <button @click="addTask">Add task</button>
@@ -9,6 +9,7 @@
 
     <ul class="task-list">
       <li v-for="task in tasks" :key="task.id" :class="{ done: task.completed }">
+        <button class="delete" @click="removeTask(task.id)">X</button>
         <input type="checkbox" v-model="task.completed" />
         <span>{{ task.text }}</span>
       </li>
@@ -23,11 +24,12 @@ import { ref } from 'vue'
 const newTask = ref("")
 const tasks = ref([])
 
-function addTask() {
+const addTask = () => {
   const text = newTask.value.trim()
   if (!text) {
     return
   }
+
   tasks.value.push({
     id: Date.now(),
     text: text,
@@ -36,6 +38,10 @@ function addTask() {
   })
 
   newTask.value = '';
+}
+
+function removeTask(id) {
+  tasks.value = tasks.value.filter((t) => t.id !== id)
 }
 
 </script>
@@ -85,6 +91,4 @@ button {
   text-decoration: line-through;
   opacity: 0.6;
 }
-
-
 </style>
